@@ -1,5 +1,52 @@
 # Virtualia
 
+Virtualia is an on-chain platform to highlight academic productions such as articles, translations, courses, and certificates, allowing creators to monetize their content via tokens on the Solana network.
+
+## Repository Structure
+
+- `frontend/`: Web application (React + Vite) integrated with Solana wallets.
+- `contracts/`: Program (smart contract) written with Anchor to manage content minting.
+- `backend/`: Node.js API responsible for persisting user profiles and certificates in a MongoDB cluster.
+- `docs/`: Supplementary documentation about architecture, flows, and references.
+
+## Getting Started
+
+1. **Install frontend dependencies**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+   
+2. **Set up the Anchor environment** (see `docs/backend-setup.md`).
+3. **Implement and test the end-to-end flow**  following the development guide ('docs/architecture.md').
+
+### Backend API
+
+1. Create a `.env` file inside `backend/` based on `.env.example` with the MongoDB cluster connection string (`MONGODB_URI`).
+2. Install dependencies and start the server:
+
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+
+3. Use the REST endpoints to create or update profiles (`POST /api/users`), query (`GET /api/users/:walletAddress`), attach new certificates (`POST /api/users/:walletAddress/certificates`), and authenticate users by email (`POST /api/users/auth/login`).
+
+
+## Current Status
+
+This repository provides a functional skeleton with the essential elements to start the prototype:
+
+- UI with Solana wallet connection, minting form, and local listing of created assets.
+- Anchor program that stores academic content metadata on-chain and distributes symbolic rewards in tokens.
+
+From this point, it is possible to evolve toward integrations with decentralized storage, real NFT/SPL Token issuance, and application deployment.
+
+
+# Virtualia (Portuguese Version)
+
 Virtualia é uma plataforma on-chain para destacar produções acadêmicas como artigos, traduções, cursos e certificados, permitindo que criadores monetizem seus conteúdos via tokens na rede Solana.
 
 ## Estrutura do repositório
